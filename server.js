@@ -5,13 +5,18 @@ env.config();
 const PORT = process.env.PORT || 5000;
 const cors = require('cors');
 const mongoose = require('mongoose');
-const userRoutes = require('./routes/user')
+
+
+
+const userRoutes = require('./routes/user');
+const addressRoutes = require('./routes/adress');
 
 app.use(cors());
 app.use(express.json());
 
 
 app.use('/api/users', userRoutes);
+app.use('/api/addresses', addressRoutes);
 
 
 
@@ -27,4 +32,6 @@ mongoose.connect(process.env.MONGO_URI,{
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on the port: ${PORT}`)
-})
+});
+
+
