@@ -2,7 +2,7 @@ const express = require('express');
 const Address = require('../schemas/addressSchema');
 const router = express.Router();
 
-router.post('\add', async (req, res) => {
+router.post('/add', async (req, res) => {
   try {
     const newAddress = new Address(req.body);
     const savedAddress = await newAddress.save();
@@ -12,7 +12,7 @@ router.post('\add', async (req, res) => {
   }
 });
 
-router.get('\list', async (req, res) => {
+router.get('/list', async (req, res) => {
   try {
     const addresses = await Address.find();
     res.json(addresses);

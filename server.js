@@ -8,15 +8,15 @@ const mongoose = require('mongoose');
 
 
 
-const userRoutes = require('.\routes\ user');
-const addressRoutes = require('.\routes\adress');
+const userRoutes = require('./routes/user');
+const addressRoutes = require('./routes/adress');
 
 app.use(cors());
 app.use(express.json());
 
 
-app.use('\api\ users', userRoutes);
-app.use('\api\address', addressRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/addresses', addressRoutes);
 
 
 

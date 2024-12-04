@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../schemas/userSchema');
 
-router.post('\register', async (req, res) => {
+router.post('/register', async (req, res) => {
     const { name, password, phoneNumber, email } = req.body;
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -16,7 +16,7 @@ router.post('\register', async (req, res) => {
     }
 });
 
-router.post('\login', async (req, res) => {
+router.post('/login', async (req, res) => {
     const { email, password } = req.body;
     try {
         const user = await User.findOne({ email });
